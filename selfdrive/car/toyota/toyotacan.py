@@ -103,7 +103,7 @@ def create_ui_command(packer, steer, chime, left_line, right_line, left_lane_dep
     # Lines: 3 "orange", 2 "faded", 1 "solid", 0 "none";
     "RIGHT_LINE": 3 if right_lane_depart else 1 if right_line else 2,
     "LEFT_LINE": 3 if left_lane_depart else 1 if left_line else 2,
-    "BARRIERS": 1 if lat_active else 0,
+    "BARRIERS": 1 if lat_active and not steeringPressed else 0,
     "LKAS_STATUS": 2 if lat_active and not steeringPressed else 1 if lat_available else 0,
 
     # static signals
